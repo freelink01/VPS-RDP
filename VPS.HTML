@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+    <!----------------------------------ADDED CODE ----------------------------->
+      <!-- Add this CSS for popup styling and animation -->
+    <style>
+        /* Popup Styles */
+        #popup930 {
+            position: fixed;
+            top: 50px;
+            left: 100px;
+            right: 100px;
+            bottom: 50px;
+            padding: 10px;
+            background-color: #FFFF00;
+            border: 4px solid #313131;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            font-family: Arial, sans-serif;
+            z-index: 9999;
+            transition: all 0.01s ease-in-out;
+            opacity: 0;
+            visibility: hidden;
+            border-radius: 80px;
+        }
+
+        #popup930.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #btnClose830 {
+            background-color: #f1e38d;
+            color: #000;
+            border: 2px solid #000;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 12px;
+            transition: background-color 0.5s;
+        }
+
+        #btnClose830:hover {
+            background-color: #d4c15e;
+        }
+
+        /* Table Styles */
+        .table730 {
+            width: 100%;
+            display: flex;
+            justify-content: center; /* Center the table horizontally */
+            margin: 10px 0;
+        }
+
+        table {
+            width: 60%; /* Set table width to 60% */
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            font-size: 14px; /* Reduce font size */
+        }
+
+        th {
+            background-color: #ffcc00;
+            color: #333;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .warnRed630 {
+            color: red;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .infoGreen530 {
+            color: green;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* Flex container for contact info */
+        .contFlex430 {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .contFlex430 h3 {
+            margin: 0;
+            font-size: 18px; /* Increased font size */
+        }
+
+        .contFlex430 a {
+            color: blue;
+            text-decoration: none;
+            font-size: 18px; /* Increased font size */
+        }
+
+        .contFlex430 a:hover {
+            text-decoration: underline;
+        }
+
+        h3, h4, p {
+            margin: 5px 0;
+        }
+
+        h3, h4 {
+            font-size: 16px;
+        }
+    </style>
+</head>
+  <body>
+    
+  <!-- Popup Div -->
+    <div id="popup930" aria-labelledby="popup_title" role="dialog">
+        <!-- Close button and instructional text at the top -->
+        <p>Click the close button to remove the popup.</p>
+        <button id="btnClose830" onclick="closePopup()">Close</button>
+
+        <h3>Buy VPS AND RDP, Contact us below</h3>
+
+        <!-- Inline WhatsApp and Gmail -->
+        <div class="contFlex430">
+            <h3>WhatsApp: <a href="tel:+916386977003">+916386977003</a></h3>
+            <h3>Email: <a href="mailto:ashu940631@gmail.com">ashu940631@gmail.com</a></h3>
+        </div>
+
+        <!-- Updated Telegram link -->
+        <h4><a href="https://t.me/rdp_session" target="_blank">Click to Join Telegram Group</a></h4>
+        <p>A main feature of this VPS/RDP is that it keep the session Active for 11 HOURS. even if you close the VPS/RDP tab in your browser.</p>
+        <br> 
+<a href="https://www.youtube.com/@rdpprovider" target="_blank" rel="noopener noreferrer" style="color:#0056b3;background-color:#ffd700;text-decoration:none;font-weight:600;padding:4px 8px;border-radius:6px;box-shadow:0 2px 4px rgba(0,0,0,0.2);transition:all 0.3s ease;display:inline-block;">MAIN YT=https://www.youtube.com/@rdpprovider</a>
+<br>
+<br>
+<a href="https://freelink01.github.io/freelink/" target="_blank" rel="noopener noreferrer" style="color:#0056b3;background-color:#ffd700;text-decoration:none;font-weight:600;padding:4px 8px;border-radius:6px;box-shadow:0 2px 4px rgba(0,0,0,0.2);transition:all 0.3s ease;display:inline-block;">MAIN Website=https://freelink01.github.io/freelink/</a>
+  
+        <!-- Table Container -->
+        <div class="table730">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fair Use of VPS/RDP</th>
+                        <th>Not Fair Use of VPS/RDP</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="infoGreen530">Using the RDP personally and fairly.</td>
+                        <td class="warnRed630">Using the RDP for illegal activities is not allowed.</td>
+                    </tr>
+                    <tr>
+                        <td class="infoGreen530">Fair use keeps your session active.</td>
+                        <td class="warnRed630">Unfair use will terminate your session.</td>
+                    </tr>
+                    <tr>
+                        <td class="infoGreen530">No refund of money under any circumstance.</td>
+                        <td class="warnRed630">No refund of money under any circumstance.</td>
+                    </tr>
+                    <tr>
+                        <td class="infoGreen530">Use for watch time, views, likes, subscribers, etc.</td>
+                        <td class="warnRed630">Do not use for Bitcoin mining, etc.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>Ensure that you follow all guidelines and use this RDP/VPS responsibly.</p>
+    </div>
+
+    <!-- Script to handle the popup -->
+    <script>
+        window.onload = function() {
+            // Show the popup after 1 second
+            setTimeout(function() {
+                document.getElementById('popup930').classList.add('show');
+            }, 1000);
+        };
+
+        function closePopup() {
+            document.getElementById('popup930').classList.remove('show');
+        }
+    </script>  
+    
+    
+    
+    
+    
+    
+    
+  </body>
+</html>
