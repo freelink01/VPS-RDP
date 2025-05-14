@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VPS/RDP Popup</title>
+  <style>
+    :root {
+      --primary-color: #2563eb;
+      --secondary-color: #f97316;
+      --text-color: #1f2937;
+      --bg-color: #ffffff;
+      --border-color: #e5e7eb;
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-family);
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    #popup930 {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--bg-color);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      width: clamp(320px, 85vw, 640px);
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 24px;
+      z-index: 1000;
+      display: grid;
+      gap: 16px;
+      animation: fadeSlideIn 0.35s ease-out;
+    }
+
+    @keyframes fadeSlideIn {
+      from {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+      }
+      to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    /* Top section with centered text and button */
+    .popup-top-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .popup-message {
+      font-size: 0.978rem;
+      color: #000000;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    /* Close Button */
+    #btnClose830 {
+      background: var(--secondary-color);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    #btnClose830:hover {
+      background: #ea580c;
+      transform: scale(1.05);
+    }
+
+    #btnClose830:focus {
+      outline: 2px solid var(--primary-color);
+      outline-offset: 2px;
+    }
+
+    /* Content Container */
+    .popup-content {
+      padding-top: 0;
+    }
+
+    h3, h4 {
+      margin: 0;
+      color: var(--text-color);
+    }
+
+    h3 {
+      font-size: 1.375rem;
+      font-weight: 700;
+    }
+
+    h4 {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    p {
+      font-size: 0.875rem;
+      color: #4b5563;
+      line-height: 1.6;
+      margin: 8px 0;
+    }
+
+    .contFlex430 {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .contFlex430 h3 {
+      font-size: 0.9375rem;
+      font-weight: 500;
+    }
+
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: #1e40af;
+      text-decoration: underline;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button-link {
+      background: var(--primary-color);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      transition: background 0.2s ease, transform 0.2s ease;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .button-link:hover {
+      background: #1e40af;
+      transform: translateY(-2px);
+    }
+
+    .table730 {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    th {
+      background: #f9fafb;
+      font-weight: 600;
+    }
+
+    .infoGreen530 {
+      color: #15803d;
+      font-weight: 500;
+    }
+
+    .warnRed630 {
+      color: #b91c1c;
+      font-weight: 500;
+    }
+
+    #popup930::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    #popup930::-webkit-scrollbar-track {
+      background: #f3f4f6;
+    }
+
+    #popup930::-webkit-scrollbar-thumb {
+      background: #9ca3af;
+      border-radius: 4px;
+    }
+
+    @media (max-width: 600px) {
+      #popup930 {
+        width: 90vw;
+        padding: 16px;
+      }
+      h3 {
+        font-size: 1.125rem;
+      }
+      h4 {
+        font-size: 0.875rem;
+      }
+      p {
+        font-size: 0.8125rem;
+      }
+      .contFlex430 {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .button-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .button-link {
+        padding: 8px 16px;
+        margin-bottom: 10px;
+      }
+      table {
+        font-size: 0.75rem;
+      }
+      #btnClose830 {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="popup930" aria-labelledby="popup_title" role="dialog" aria-modal="true">
+    <!-- Centered Top Message and Close Button -->
+    <div class="popup-top-center">
+      <p class="popup-message">CLICK THE CLOSE BUTTON (↓) TO CONNECT RDP/VPS.</p>
+      <button id="btnClose830" aria-label="Close popup" onclick="closePopup()">Close</button>
+    </div>
+
+    <!-- Content Container -->
+    <div class="popup-content">
+      <h3 id="popup_title">Purchase VPS or RDP</h3>
+
+      <div class="contFlex430">
+        <h3>WhatsApp: <a href="tel:+916386977003">+91 6386977003</a></h3>
+        <h3>Email: <a href="mailto:ashu940631@gmail.com">ashu940631@gmail.com</a></h3>
+      </div>
+
+      <h4><a href="https://t.me/rdp_session" target="_blank" rel="noopener noreferrer">Join Our Telegram Community</a></h4>
+
+      <p>Our VPS/RDP service keeps your session active for up to <strong>11 hours</strong>, even if you close your browser tab.</p>
+
+      <div class="button-container">
+        <a href="https://www.youtube.com/@rdpprovider" target="_blank" rel="noopener noreferrer" class="button-link">VISIT FOR PASSWORD</a>
+        <a href="https://freelink01.github.io/freelink/" target="_blank" rel="noopener noreferrer" class="button-link">VISIT OUR WEBSITE </a>
+      </div>
+
+      <div class="table730">
+        <table>
+          <thead>
+            <tr>
+              <th>Permitted Use</th>
+              <th>Prohibited Use</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="infoGreen530">Personal and responsible use of RDP.</td>
+              <td class="warnRed630">Illegal activities are strictly prohibited.</td>
+            </tr>
+            <tr>
+              <td class="infoGreen530">Fair use ensures uninterrupted sessions.</td>
+              <td class="warnRed630">Unfair use results in session termination.</td>
+            </tr>
+            <tr>
+              <td class="infoGreen530">No refunds under any circumstances.</td>
+              <td class="warnRed630">No refunds under any circumstances.</td>
+            </tr>
+            <tr>
+              <td class="infoGreen530">Use for watch time, views, likes, subscribers, etc.</td>
+              <td class="warnRed630">Prohibited for Bitcoin mining or similar activities.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Please adhere to all guidelines and use our VPS/RDP responsibly.</p>
+    </div>
+  </div>
+
+  <script>
+    function closePopup() {
+      document.getElementById('popup930').style.display = 'none';
+      document.body.style.background = 'none';
+    }
+
+    window.addEventListener('resize', () => {
+      const popup = document.getElementById('popup930');
+      popup.style.height = popup.offsetHeight > window.innerHeight * 0.85 ? '85vh' : 'auto';
+    });
+  </script>
+</body>
+</html>
