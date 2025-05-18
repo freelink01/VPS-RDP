@@ -58,23 +58,24 @@
 
     <!----------------------------------ADDED CODE ----------------------------->
       <!-- Add this CSS for popup styling and animation -->
-      <style>
-        :root {
-          --primary-color: #2563eb;
-          --secondary-color: #f97316;
-          --text-color: #1f2937;
-          --bg-color: #ffffff;
-          --border-color: #e5e7eb;
-          --shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-          --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        }
-    
-        body {
-          margin: 0;
-          font-family: var(--font-family);
-          background: rgba(0, 0, 0, 0.5);
-        }
-        #popup930 {
+  <style>
+    :root {
+      --primary-color: #2563eb;
+      --secondary-color: #f97316;
+      --text-color: #1f2937;
+      --bg-color: #ffffff;
+      --border-color: #e5e7eb;
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-family);
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    #popup930 {
       position: fixed;
       top: 50%;
       left: 50%;
@@ -103,7 +104,6 @@
       }
     }
 
-    /* Top section with centered text and button */
     .popup-top-center {
       display: flex;
       flex-direction: column;
@@ -118,7 +118,6 @@
       margin: 0;
     }
 
-    /* Close Button */
     #btnClose830 {
       background: var(--secondary-color);
       color: #fff;
@@ -141,9 +140,8 @@
       outline-offset: 2px;
     }
 
-    /* Content Container */
     .popup-content {
-      padding-top: 0;
+      text-align: center;
     }
 
     h3, h4 {
@@ -293,80 +291,82 @@
         font-size: 0.75rem;
       }
     }
-    </style>
+  </style>
 </head>
 
 <body>
     <!-- Popup Div -->
-    <div id="popup930" aria-labelledby="popup_title" role="dialog" aria-modal="true">
-        <!-- Centered Top Message and Close Button -->
-        <div class="popup-top-center">
-          <p class="popup-message">CLICK THE CLOSE BUTTON TO CONNECT RDP/VPS.</p>
-          <button id="btnClose830" aria-label="Close popup" onclick="closePopup()">Close</button>
-        </div>
-    
-        <!-- Content Container -->
-        <div class="popup-content">
-          <h3 id="popup_title">Purchase VPS or RDP with full root access</h3>
-    
-          <div class="contFlex430">
-            <h3>WhatsApp: <a href="tel:+916386977003">+91 6386977003</a></h3>
-            <h3>Email: <a href="mailto:ashu940631@gmail.com">ashu940631@gmail.com</a></h3>
-          </div>
-    
-          <h4><a href="https://t.me/rdp_session" target="_blank" rel="noopener noreferrer">Join Our Telegram Community</a></h4>
-    
-          <p>Our VPS/RDP service keeps your session active for up to <strong>11 hours</strong>, even if you close your browser tab.</p>
-    
-          <div class="button-container">
-            <a href="https://www.youtube.com/@rdpprovider" target="_blank" rel="noopener noreferrer" class="button-link">VISIT FOR PASSWORD</a>
-            <a href="https://freelink01.github.io/freelink/" target="_blank" rel="noopener noreferrer" class="button-link">VISIT OUR WEBSITE </a>
-          </div>
-    
-          <div class="table730">
-            <table>
-              <thead>
-                <tr>
-                  <th>Permitted Use</th>
-                  <th>Prohibited Use</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="infoGreen530">Personal and responsible use of RDP.</td>
-                  <td class="warnRed630">Illegal activities are strictly prohibited.</td>
-                </tr>
-                <tr>
-                  <td class="infoGreen530">Fair use ensures uninterrupted sessions.</td>
-                  <td class="warnRed630">Unfair use results in session termination.</td>
-                </tr>
-                <tr>
-                  <td class="infoGreen530">No refunds under any circumstances.</td>
-                  <td class="warnRed630">No refunds under any circumstances.</td>
-                </tr>
-                <tr>
-                  <td class="infoGreen530">Use for watch time, views, likes, subscribers, etc.</td>
-                  <td class="warnRed630">Prohibited for Bitcoin mining or similar activities.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-    
-          <p>Please adhere to all guidelines and use our VPS/RDP responsibly.</p>
-        </div>
-      </div>
-    
-      <script>
-        function closePopup() {
-          document.getElementById('popup930').style.display = 'none';
-          document.body.style.background = 'none';
-        }
-    
-        window.addEventListener('resize', () => {
-          const popup = document.getElementById('popup930');
-          popup.style.height = popup.offsetHeight > window.innerHeight * 0.85 ? '85vh' : 'auto';
-        });
-      </script>
+  <div id="popup930" aria-labelledby="popup_title" role="dialog" aria-modal="true">
+    <div class="popup-top-center">
+      <p class="popup-message">CLICK THE CLOSE BUTTON TO CONNECT RDP/VPS.</p>
+      <button id="btnClose830" aria-label="Close popup" onclick="closePopup()">Close</button>
+    </div>
+
+    <div class="popup-content">
+      <h3 id="popup_title">
+        Get RDP/VPS Passwords<br>
+        <span style="color: #1d4ed8;">Watch Our Latest YouTube Video!</span>
+      </h3>
+      <h4>Passwords Updated Daily: 5–6 AM & 5–6 PM (IST)</h4>
+    </div>
+
+    <p>Enjoy up to <strong>11 hours</strong> of active VPS/RDP sessions, even if you close your browser.</p>
+
+    <div class="button-container">
+      <a href="https://www.youtube.com/@rdpprovider" target="_blank" rel="noopener noreferrer" class="button-link">VISIT FOR PASSWORD</a>
+      <a href="https://freelink01.github.io/freelink/" target="_blank" rel="noopener noreferrer" class="button-link">VISIT OUR WEBSITE</a>
+    </div>
+
+    <div class="table730">
+      <table>
+        <thead>
+          <tr>
+            <th>Permitted Use</th>
+            <th>Prohibited Use</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="infoGreen530">Personal and responsible use of RDP.</td>
+            <td class="warnRed630">Illegal activities are strictly prohibited.</td>
+          </tr>
+          <tr>
+            <td class="infoGreen530">Fair use ensures uninterrupted sessions.</td>
+            <td class="warnRed630">Unfair use results in session termination.</td>
+          </tr>
+          <tr>
+            <td class="infoGreen530">No refunds under any circumstances.</td>
+            <td class="warnRed630">No refunds under any circumstances.</td>
+          </tr>
+          <tr>
+            <td class="infoGreen530">Use for watch time, views, likes, subscribers, etc.</td>
+            <td class="warnRed630">Prohibited for Bitcoin mining or similar activities.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Please adhere to all guidelines and use our VPS/RDP responsibly.</p>
+  </div>
+
+  <script>
+    function closePopup() {
+      document.getElementById('popup930').style.display = 'none';
+      document.body.style.background = 'none';
+    }
+
+    // Auto-close popup after 10 seconds (changed here)
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        closePopup();
+      }, 15000);
+    });
+
+    window.addEventListener('resize', () => {
+      const popup = document.getElementById('popup930');
+      popup.style.height = popup.offsetHeight > window.innerHeight * 0.85 ? '85vh' : 'auto';
+    });
+  </script>
 
 
     <!---------------------------------#-------------------------------------->
