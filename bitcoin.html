@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Under Maintenance</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #171717 0%, #272727 100%);
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at center, rgba(0, 195, 255, 0.2) 0%, transparent 60%);
+      z-index: 0;
+    }
+    h1 {
+      font-size: 1.6em;
+      font-weight: 600;
+      margin-bottom: 0.6em;
+      color: #ffffff;
+      z-index: 1;
+      animation: fadeIn 1s ease-out;
+    }
+    .highlight-reason {
+      font-size: 1.6em;
+      background: rgba(255, 0, 0, 0.2);
+      border: 2px solid #ff4d4d;
+      color: #ff9999;
+      font-weight: 700;
+      padding: 1em 1.6em;
+      border-radius: 10px;
+      box-shadow: 0 0 18px rgba(255, 77, 77, 0.5);
+      max-width: 90%;
+      margin-bottom: 1.5em;
+      animation: fadeIn 1s ease-out;
+      z-index: 1;
+    }
+    .spinner {
+      border: 8px solid rgba(255, 255, 255, 0.15);
+      border-top: 8px solid #00c3ff;
+      border-right: 8px solid #007bff;
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      animation: spin 1.2s ease-in-out infinite;
+      margin: 2em auto;
+      box-shadow: 0 0 25px rgba(0, 195, 255, 0.4);
+      z-index: 1;
+    }
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.95em;
+      font-weight: 500;
+      color: #b8b8b8;
+      letter-spacing: 0.04em;
+      animation: slideUp 1.2s ease-out;
+      transition: color 0.3s ease, transform 0.3s ease;
+      z-index: 1;
+    }
+    footer:hover {
+      color: #00c3ff;
+      transform: translateY(-3px);
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideUp {
+      0% { opacity: 0; transform: translateY(25px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.3em;
+      }
+      .highlight-reason {
+        font-size: 1.1em;
+        padding: 0.8em 1.2em;
+      }
+      .spinner {
+        width: 60px;
+        height: 60px;
+      }
+      footer {
+        font-size: 0.85em;
+        bottom: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1 role="alert">Website Under Maintenance</h1>
+  <div class="highlight-reason">🚫 Reason: Some users were mining cryptocurrency using our free RDP.</div>
+  <div class="spinner" aria-hidden="true"></div>
+  <footer>© 2025 FreeRDP VPS Provider</footer>
+</body>
+</html>
